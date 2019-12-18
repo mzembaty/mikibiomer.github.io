@@ -2,7 +2,7 @@
 # Course title, summary, and position in the list.
 linktitle: An Example Course
 summary: Learn how to customize MIKIbiomeR plots.
-weight: 10
+weight: 30
 
 # Page metadata.
 title: "Customize Plots"
@@ -18,7 +18,7 @@ type: docs  # Do not modify.
 menu:
   docs:
     name: "Customize Plots"
-    weight: 20
+    weight: 30
     parent: "Get Started"
 ---
 
