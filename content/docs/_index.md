@@ -13,5 +13,6 @@ menu:
     weight: 1
 ---
 
-Here are some tutorials to get you started with 16S rRNA analysis with
-the MIKIbiomeR package. Dive right in with the [Installation]({{< relref "install" >}}) guide.
+Here are some tutorials to get you started with 16S rRNA analysis using
+the MIKIbiomeR package. Dive right in with the
+[Installation]({{< relref "install" >}}) guide.

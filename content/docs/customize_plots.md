@@ -19,15 +19,56 @@ menu:
   docs:
     name: "Customize Plots"
     weight: 30
-    parent: "Get Started"
 ---
 
-## Customize with parameters
+## beta_ordination()
+This function performs ordination and an adonis test and plots the results.
+Additionally it prints the results of the adonis test.
 
-Some plots have optional paremeters to specifically customize them.
+### Ordination calculations should be printed
+If the calculations performed by the ordination should be calculated aswell,
+set the parameter `verbose = TRUE`.
 
-First we will
-
-```r abundance plot
-adbunance_plot()
+```r print ordination calculation
+beta_ordination(phylo, distance_method = "bray",
+                 formula = "Genotype + Experiment + Cage",
+                 ordination_type = "NMDS",
+                 color = "Genotype",
+                verbose = TRUE)
 ```
+
+### Plot only ordination
+If only the ordination plot should appeare, the parameter `formula` can be left
+out.
+
+```r Only Ordination plot
+beta_ordination(phylo, distance_method = "bray",
+                 ordination_type = "NMDS",
+                 color = "Genotype")
+```
+
+### No connections between points
+By default `beta_ordination()` creates a star plot on top of the ordination
+plot. To prevent this from happening set the parameter `geom_star = FALSE`
+
+```r Only Ordination plot
+beta_ordination(phylo, distance_method = "bray",
+                 ordination_type = "NMDS",
+                 color = "Genotype")
+```
+
+## abundance_plot()
+
+
+### Known issues
+
+#### Stacked percentage bars
+```r issue 1
+abundance_plot(phylo = phylo_rel, "Mouse", facetby = "Genotype", taxlev = "Family", ntaxa = 15)
+abundance_plot(phylo = phylo_rel, "Genotype", facetby = "Genotype", taxlev = "Family", ntaxa = 15)
+```
+Creates a bar plot with stacked percentages
+
+<hr>
+
+#### Ordering sometimes creates strange outputs
